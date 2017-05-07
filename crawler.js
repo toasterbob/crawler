@@ -32,7 +32,7 @@ function searchForWord($, word) {
 function collectInternalLinks($) {
   var allRelativeLinks = [];
   var allAbsoluteLinks = [];
-
+ 
   var relativeLinks = $("a[href^='/']");
   relativeLinks.each(function() {
       allRelativeLinks.push($(this).attr('href'));

@@ -16,7 +16,7 @@ request(pageToVisit, function(error, response, body) {
      console.log("Page title:  " + $('title').text());
     //  console.log($('body').text());
      console.log(searchForWord($, "science"))
-   } 
+   }
 });
 
 function searchForWord($, word) {
@@ -25,4 +25,23 @@ function searchForWord($, word) {
     return bodyText.toLowerCase().indexOf(word.toLowerCase())
   }
   return false;
+}
+
+function collectInternalLinks($) {
+  var allRelativeLinks = [];
+  var allAbsoluteLinks = [];
+
+  var relativeLinks = $("a[href^='/']");
+  relativeLinks.each(function() {
+      allRelativeLinks.push($(this).attr('href'));
+
+  });
+
+  var absoluteLinks = $("a[href^='http']");
+  absoluteLinks.each(function() {
+      allAbsoluteLinks.push($(this).attr('href'));
+  });
+
+  console.log("Found " + allRelativeLinks.length + " relative links");
+  console.log("Found " + allAbsoluteLinks.length + " absolute links");
 }

@@ -16,7 +16,7 @@ request(pageToVisit, function(error, response, body) {
      console.log("Page title:  " + $('title').text());
     //  console.log($('body').text());
      console.log(searchForWord($, "science"))
-   }
+   } 
 });
 
 function searchForWord($, word) {

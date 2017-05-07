@@ -21,11 +21,11 @@ request(pageToVisit, function(error, response, body) {
 });
 
 function searchForWord($, word) {
-  var words_words_words = $("body[${word}]")
+
   var bodyText = $('html > body').text();
   if(bodyText.toLowerCase().indexOf(word.toLowerCase()) !== -1) {
     return bodyText.toLowerCase().indexOf(word.toLowerCase())
-    console.log(words_words_words);
+
   }
   return false;
 }

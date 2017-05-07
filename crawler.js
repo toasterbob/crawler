@@ -15,15 +15,17 @@ request(pageToVisit, function(error, response, body) {
      var $ = cheerio.load(body);
      console.log("Page title:  " + $('title').text());
     //  console.log($('body').text());
-     console.log(searchForWord($, "computer"));
+     console.log(searchForWord($, "science"));
      console.log(collectInternalLinks($));
    }
 });
 
 function searchForWord($, word) {
+  var words_words_words = $("body[${word}]")
   var bodyText = $('html > body').text();
   if(bodyText.toLowerCase().indexOf(word.toLowerCase()) !== -1) {
     return bodyText.toLowerCase().indexOf(word.toLowerCase())
+    console.log(words_words_words);
   }
   return false;
 }

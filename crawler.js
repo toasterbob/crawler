@@ -15,7 +15,8 @@ request(pageToVisit, function(error, response, body) {
      var $ = cheerio.load(body);
      console.log("Page title:  " + $('title').text());
     //  console.log($('body').text());
-     console.log(searchForWord($, "science"))
+     console.log(searchForWord($, "science"));
+     console.log(collectInternalLinks($));
    }
 });
 
@@ -26,6 +27,7 @@ function searchForWord($, word) {
   }
   return false;
 }
+
 
 function collectInternalLinks($) {
   var allRelativeLinks = [];

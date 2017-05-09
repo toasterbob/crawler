@@ -25,7 +25,6 @@ function searchForWord($, word) {
   var bodyText = $('html > body').text();
   if(bodyText.toLowerCase().indexOf(word.toLowerCase()) !== -1) {
     return bodyText.toLowerCase().indexOf(word.toLowerCase())
-
   }
   return false;
 }
